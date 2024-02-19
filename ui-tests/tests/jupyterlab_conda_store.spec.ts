@@ -19,3 +19,13 @@ test('should emit an activation console message', async ({ page }) => {
     logs.filter(s => s === 'JupyterLab extension conda-store is activated!')
   ).toHaveLength(1);
 });
+
+// import { test, expect } from '@playwright/test';
+
+test('ui-test', async ({ page }) => {
+await page.goto();
+await page.getByText('Conda-Store').click();
+await page.getByText('Conda Store Package Manager').click();
+
+expect(page.getByRole('button', { name: 'Log in' }))
+});
